@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    *   什么是cookie：
+    *       存储数据，当用户访问了某个网站的时候，我们就可以通过cookie来向访问者的电脑上存储数据；比如用户登录（简单来说 - 用户打开浏览器访问网站 A，这会在用户的电脑上生成一个 Cookie，下次访问网站 A 的时候，网站 A 可以辨别用户）
+    *   特性：
+    *       1、不同浏览器cookie存放位置是不同的；
+    *       2、页面间cookie是共享的（同一个浏览器,firefox浏览器不能访问chrome）；
+    *       3、存储形式是以域名的形式存放的；
+    *       4、每个域名下cookie个数大概是100条左右，每一组值得大小是4kb，兼容问题（不同浏览器存放放歌书不一样）
+    *   编码/解码
+    *       1、安全
+    *       2、支持转译字符(/n等等)
+    * */
+
+    // cookie设置
+    // document.cookie = '1704D = 22位同学';
+
+    // 获取cookie
+    // console.log(document.cookie);
+
+    //设置cookie过期时间
+    var oDate = new Date();
+    oDate.setDate(oDate.getDate() + 10);
+    document.cookie = '1704D= 22位\n同学; expires= ' + oDate;
+
+    //编码encodeURI存放
+   // document.cookie = '1705 =' + encodeURI('42位\n同学');
+
+    //解码decodeURI
+    console.log(decodeURI(document.cookie));
+
+</script>
+</body>
+</html>
